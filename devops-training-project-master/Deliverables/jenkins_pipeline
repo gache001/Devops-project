@@ -1,0 +1,67 @@
+pipeline{
+    agent any
+    tools {
+        terraform 'terraform-11'
+    }
+    environment {
+    	AWS_ACCESS_KEY_ID = ''
+    	AWS_SECRET_ACCESS_KEY = ''
+    	AWS_REGION = 'ap-southeast-1'
+    	TF_FOLDER = '/var/lib/jenkins/workspace/terraform-ansible-prov-conf/devops-training-project-master/Deliverables/vpc_ec2_terraform/'
+    	ANS_FOLDER = '/var/lib/jenkins/workspace/terraform-ansible-prov-conf/devops-training-project-master/Deliverables/ansible-plays/'
+    }
+    stages{
+        stage('Git checkout'){
+            steps{
+                git branch: 'main', credentialsId: 'gitcredentials', url: 'https://github.com/Ronak-Sharma/devops-training.git'
+            }
+        }
+        stage('Terraform - Env Variables Access & Secret Keys:'){
+            steps{
+             	echo env.AWS_ACCESS_KEY_ID
+            	echo env.AWS_SECRET_ACCESS_KEY
+            	echo env.AWS_REGION
+            }
+        }
+        stage('Terraform Init:'){
+            steps{
+                dir(env.TF_FOLDER){
+                    echo env.TF_FOLDER
+                    sh 'terraform init'
+                }
+            }
+        }
+        stage('Terraform Apply:'){
+            steps{
+                dir(env.TF_FOLDER){
+                    echo env.TF_FOLDER
+                    sh 'terraform apply --auto-approve'
+                }
+            }
+        }
+        stage('Dynamic Inventory'){
+            steps{
+                dir(env.TF_FOLDER){
+                     echo env.TF_FOLDER
+                     sh  'sh ./dynamic_inventory.sh'
+                }
+            }
+        }
+        stage('Ansible Init:'){
+            steps{
+                dir(env.ANS_FOLDER){
+                    echo env.ANS_FOLDER
+                    sh 'ansible --version'
+                }
+            }
+        }
+        stage('======= Execute Ansible Playbook ======='){
+            steps{
+                dir(env.ANS_FOLDER){
+                    echo env.ANS_FOLDER
+                    sh 'ansible-playbook playbook.yml -i inventory.ini --user ubuntu'
+                }
+            }
+        }
+    }
+}
