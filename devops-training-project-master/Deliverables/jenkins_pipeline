@@ -59,7 +59,7 @@ pipeline{
             steps{
                 dir(env.ANS_FOLDER){
                     echo env.ANS_FOLDER
-                    sh 'ansible-playbook playbook.yml -i inventory.ini --user ubuntu'
+                    sh 'ansible-playbook playbook.yml -i inventory.ini --user jenkins'
                 }
             }
         }
