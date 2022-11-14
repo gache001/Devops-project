@@ -13,7 +13,7 @@ pipeline{
     stages{
         stage('Git checkout'){
             steps{
-                git branch: 'main', credentialsId: 'gitcredentials', url: 'https://github.com/gache001/Devops-project.git'
+                git branch: 'master', credentialsId: 'gitcredentials', url: 'https://github.com/gache001/Devops-project.git'
             }
         }
         stage('Terraform - Env Variables Access & Secret Keys:'){
