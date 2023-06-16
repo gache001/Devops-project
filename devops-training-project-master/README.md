@@ -1,4 +1,4 @@
-# Pet Clinic App - A Microservices based Capstone Project
+# Pet Clinic App - A Microservices based Project
 
 This project is an example of Live Project of DevOps where automation is the key.
 
