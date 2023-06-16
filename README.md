@@ -1,17 +1,5 @@
-# Pet Clinic App - A Microservices based Project
 
-This project is an example of Live Project of DevOps where automation is the key.
-
-## A high level architecture of Pet Clinic App
-
-![PetClinicApp](images/PetClinicApp.png)
-
-
-## CI/CD Architecture Diagram
-
-![capstone](images/capstone.png)
-
-
+## A high level architecture of Pet Clinic App - A Microservices based Project
 
 ## Advantages of  Microservices?
 
