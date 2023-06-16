@@ -1,7 +1,5 @@
 # Pet Clinic App - A Microservices based Project
 
-This project is an example of Live Project of DevOps where automation is the key.
-
 ## A high level architecture of Pet Clinic App
 
 ![PetClinicApp](images/PetClinicApp.png)
@@ -71,4 +69,4 @@ https://github.com/terraform-aws-modules/terraform-aws-vpc/tree/v2.21.0/examples
 5. A short writeup on how the pipeline works.
 6. Any custom scripts if any used.
 
-Alternatively, you can share your Git repository with us.
+
