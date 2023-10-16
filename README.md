@@ -30,7 +30,7 @@ This is the build process that you can follow to manually compile and run the ap
 ```
 	git clone https://github.com/gache001/Devops-project.git
 	cd Devops-project/main-code/spring-petclinic-rest-pet
-        You can start an on-demand container to test and build the java code
+You can start an on-demand container to test and build the java code
 	mvn package 
         ls target/                                  
         java -jar target/spring-petclinic-rest-pet-1.5.2.RELEASE.jar
