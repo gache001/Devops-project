@@ -30,26 +30,17 @@ This is the build process that you can follow to manually compile and run the ap
 ```
 	git clone https://github.com/gache001/Devops-project.git
 	cd Devops-project/main-code/spring-petclinic-rest-pet
+
         You can start an on-demand container to test and build the java code
 
 	... docker run -it -v $PWD:/app -w /app openjdk:11-jre-slim /bin/bash
 
-   	mvn package 
+	apt-get update, apt-get install -y maven
+   	mvn clean package
         ls target/                                  
         java -jar target/spring-petclinic-rest-pet-1.5.2.RELEASE.jar
 ```
 
-You can then access petclinic here: http://localhost:8080/
-
-** Do remember you have to individually build every single microservice, above code only shows you how to compile one microservice. **
-
-### Notes and instructions
-
-1. Do not run the builds against this repository, you should upload the code to your own github or Bitbucket repository.
-2. One important thing to note here is that each microservice should have their individual repository, else you will not be able to deploy microservices independently.
-3. Make a note of the toolset/ toolchain that is being used in this project as per the CI/CD Architecture Diagram.
-4. To create a VPC using Terraform, you can consult below link:
-https://github.com/terraform-aws-modules/terraform-aws-vpc/tree/v2.21.0/examples/vpc-separate-private-route-tables
 
 ### Tips
 
