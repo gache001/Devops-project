@@ -28,7 +28,7 @@ __Development velocity__: Microservices can enable a team to build faster by low
 This is the build process that you can follow to manually compile and run the app. This process needs to be automated.
 
 ```
-	git clone https://dsa-devops@bitbucket.org/dsa-devops/live-project.git
+	git clone https://github.com/gache001/Devops-project.git
 	cd spring-petclinic-rest-pet
 	mvn package 
         ls target/                                  
