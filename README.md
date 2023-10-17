@@ -33,7 +33,7 @@ This is the build process that you can follow to manually compile and run the ap
 
         You can start an on-demand container to test and build the java code
 
-	... docker run -it -v $PWD:/app -w /app openjdk:11-jre-slim /bin/bash
+	... docker run -it -v $PWD:/app -w /app openjdk:11 /bin/bash
 
 	apt-get update, apt-get install -y maven
    	mvn clean package
